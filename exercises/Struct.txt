@@ -1,0 +1,6 @@
+struct Tfunc {​​
+ char nome[30];
+ float salario;
+ }​​;
+
+typedef struct Tfunc Tfuncionarios;

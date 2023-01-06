@@ -1,0 +1,93 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#define MAX 10
+using namespace std;
+
+int insere_ordenado(int lista[], int *fim, int n){​​
+    int i;
+    if (*fim>=(MAX-1))
+        return 1;
+    else{​
+        *fim=*fim+1;
+        i=*fim;
+        while ((lista[i-1]>n) && (i>0)){​​
+            lista[i]=lista[i-1];
+            i--;
+        }​​
+        lista[i]=n;
+        return 0;
+    }​​
+}​​
+
+int remove_lista (int lista[],int *fim, int posicao){​​
+    if (*fim<0)
+        return 1;
+    else 
+        if ((posicao>=0) && (posicao<=*fim)){​​
+        for(int i=posicao;i<*fim;i++)
+            lista[i]=lista[i+1];
+        *fim=*fim-1;
+        return 0;
+    }​​
+    else
+        return 2;
+}​​
+
+int imprime_lista (int lista[], int fim){​​
+    if (fim<0)
+        return 1;
+    for(int i=0;i<=fim;i++)
+        cout << lista[i] << " ";
+    return 0;
+}​​
+
+int main(){​​
+    int lista[MAX], fim=-1, op, numero, flag, posicao;
+    do{​​
+        system("cls");
+        cout << "* * * * * M E N U * * * * *\n\n\n";
+        cout << "\n1 - insere ordenado";
+        cout << "\n2 - remove";
+        cout << "\n3 - mostrar";
+        cout << "\n9 - sair";
+        cout << "\n\n Digite a sua opcao: ";
+        cin >> op;
+        switch (op){​​
+            case 1 : system("cls");
+                cout << "* * * * * Insere * * * * *\n\n\n";
+                cout << "\nDigite um numero inteiro: ";
+                cin >> numero;
+                flag = insere_ordenado (lista, &fim, numero);
+                if (flag==0)
+                    cout << "\n\nElemento inserido com sucesso!\n\n";
+                else
+                    cout << "\n\nImpossivel inserir...\nLista cheia!\n\n";
+                system("pause");
+            break;
+            case 2 : system("cls");
+                cout << "* * * * * Remove * * * * *\n\n\n";
+                cout << "\nDigite a posicao do elemento a ser removido entre [0] e [" << fim << "] : ";
+                cin >> posicao;
+                flag = remove_lista(lista,&fim,posicao);
+                if (flag==0)
+                    cout << "\n\nElemento removido com sucesso!!\n\n";
+                else  
+                if (flag==1)
+                    cout << "\n\nImpossivel remover...\nLista vazia\n\n";
+                else
+                    cout << "\n\nImpossivel remover...\nPosicao invalida!\n\n";
+                system("pause");
+            break;
+            case 3 : system("cls");
+                cout << "* * * * * Imprime lista * * * * *\n\n\n";
+                flag = imprime_lista(lista,fim);
+                if (flag!=0)
+                    cout << "\n\nLista vazia!!";
+                cout << "\n\n\n";
+                system("pause");
+            break;
+        }​​
+    }​​while (op!=9);
+return 0;
+}​​

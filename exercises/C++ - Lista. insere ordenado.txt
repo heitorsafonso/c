@@ -1,0 +1,22 @@
+int insere_ordenado (int *lista, int *fim, int n)
+ {​​​​
+ int i;
+
+ if (*fim>=(MAX-1))
+ return 1;
+
+ else{​​​​
+ *fim=*fim+1;
+ i=*fim;
+
+ while ((lista[i-1]>n) && (i>0)) {​​​​
+
+ lista[i]=lista[i-1];
+ i--;
+
+ }​​​​
+
+ lista[i]=n;
+ return 0;
+ }​​​​
+ }​​​​

@@ -1,0 +1,100 @@
+ #include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #define MAX 10
+
+ using namespace std;
+
+ int push (int p[], int *t, int e){​​​​
+
+ if (*t>(MAX-2))
+ return 1;
+
+ else{​​​​
+ *t=*t+1;
+ p[*t]=e;
+ return 0;
+ }​​​​
+ }​​​​
+
+ int pop (int p[],int *t){​​​​
+
+ if (*t<0)
+ return 1;
+
+ else{​​​​
+ *t=*t-1;
+ return 0;
+ }​​​​
+ }​​​​
+
+void imprime (int p[],int t){​​​​
+
+ for(int i=t;i>=0;i--)
+ cout << "\n" << p[i];
+ cout << "\n\n\n";
+ }​​​​
+
+ int main(){​​​​
+
+ int pilha[MAX];
+ int topo, op, elemento, flag;
+ topo=-1;
+
+ do{​​​​
+ system("cls");
+
+ cout << "* * * * M E N U * * * *\n\n\n";
+ cout << "\n1 - Push";
+ cout << "\n2 - Pop";
+ cout << "\n3 - Imprime pilha";
+ cout << "\n9 - Sair";
+ cout << "\n\nDigite a sua opcao: ";
+ cin >> op;
+
+switch(op){​​​​
+ case 1 : system("cls");
+ cout << "* * * * P u s h * * * *\n\n\n";
+ cout << "Digite um numero inteiro para inserir na pilha: ";
+ cin >> elemento;
+
+ flag = push(pilha,&topo,elemento);
+
+ if (flag==0)
+ cout << "\n\nElemento inserido com sucesso!\n\n";
+
+ else
+ cout << "\n\nImpossivel inserir...\nPilha cheia!\n\n";
+
+ system("pause");
+ break;
+
+case 2 : system("cls");
+ cout << "* * * * P O P * * * *\n\n\n";
+ flag = pop (pilha,&topo);
+
+ if (flag==0)
+ cout << "\nElemento removido com sucesso!\n\n";
+
+ else
+ cout << "\nImpossivel remover...\nPilha vazia\n\n";
+
+ system("pause");
+ break;
+
+
+ case 3 : system("cls");
+ cout << "* * * * P I L H A * * * *\n\n\n";
+
+ if (topo<0)
+ cout << "\n\nPilha vazia\n\n";
+
+ else
+ imprime(pilha,topo);
+
+ system("pause");
+ break;
+
+}​​​​
+}​​​​while(op!=9);
+}​​​​

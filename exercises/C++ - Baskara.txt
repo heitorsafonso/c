@@ -1,0 +1,154 @@
+ #include <iostream>
+ #include <stdlib.h>
+ #include <math.h> // sqrt()
+
+
+ using namespace std;
+
+
+ float delta (float a, float b, float c){​​
+
+ return b*b-4*a*c;
+ }​​
+
+ void raizes (float a, float b, float c, float *x1, float *x2, float *Xv, float *Yv ){​​
+
+ float dt;
+
+ dt = delta(a,b,c);
+
+ if (dt>=0){​​
+
+ *x1=(-b+sqrt(dt))/(2*a);
+
+ *x2=(-b-sqrt(dt))/(2*a);
+
+ }​​
+
+ else{​​
+
+ cout << "\n\nNao existem raizes reais\n\n";
+ system("pause");
+
+ }​​
+
+*Xv = (-b)/(2*a);
+ *Yv = (-dt)/(4*a);
+
+ }​​
+
+
+
+
+
+ int main(){​​
+
+ float a,b,c,x1,x2,vx,vy;
+
+ cout << "\n* * * Programa funcao 2# grau * * *\n\n";
+ cout << "\nDigite o valor de A: ";
+ cin >> a;
+ cout << "\nDigite o valor de B: ";
+ cin >> b;
+ cout << "\nDigite o valor de C: ";
+ cin >> c;
+
+raizes(a,b,c,&x1,&x2,&vx,&vy);
+
+if (delta(a,b,c)>=0){​​
+
+ cout << "\n\nDelta = " << delta(a,b,c) << " X1 = " << x1;
+
+ cout << " X2 = " << x2;
+
+ }​​
+
+cout << " Xv = " << vx << " Yv = " << vy << "\n\n";
+
+ }​​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #include <iostream>
+ #include <stdlib.h>
+ #include <math.h> // sqrt()
+
+ using namespace std;
+
+ float delta (float a, float b, float c){​​
+
+ return b*b-4*a*c;
+ }​​
+
+
+ int raizes (float a, float b, float c, float *x1, float *x2, float *Xv, float *Yv ){​​
+ float dt;
+ int flag;
+
+ dt = delta(a,b,c);
+
+ if (dt>=0){​​
+
+ *x1=(-b+sqrt(dt))/(2*a);
+
+ *x2=(-b-sqrt(dt))/(2*a);
+
+ flag=0;
+ }​​
+
+ else
+ flag=1;
+
+
+ *Xv = (-b)/(2*a);
+ *Yv = (-dt)/(4*a);
+
+
+ return flag;
+ }​​
+
+
+ int main(){​​
+
+ float a,b,c,x1,x2,vx,vy;
+ int teste;
+
+ cout << "\n* * * Programa funcao 2# grau * * *\n\n";
+ cout << "\nDigite o valor de A: ";
+ cin >> a;
+ cout << "\nDigite o valor de B: ";
+ cin >> b;
+ cout << "\nDigite o valor de C: ";
+ cin >> c;
+
+
+teste = raizes(a,b,c,&x1,&x2,&vx,&vy);
+
+
+if (teste==0){​​
+
+ cout << "\n\nDelta = " << delta(a,b,c) << "\nX1 = " << x1;
+ cout << "\nX2 = " << x2;
+ }​​
+
+ else{​​
+ cout << "\n\nNao existe raises reais\n\n";
+ }​​
+
+cout << "\n\nXv = " << vx << "\nYv = " << vy << "\n\n";
+
+system("pause");
+ }​​

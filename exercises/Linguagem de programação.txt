@@ -1,0 +1,23 @@
+1) Escreva um programa que leia n notas (o usuario informara quando deseja 
+parar de digitar as notas) e retorne a média das notas.
+
+
+
+2) Continue o programa anterior para retornar tambem:
+	a) A maior nota.
+	b) A menor nota.
+
+
+
+3) Escreva um programa que receba o peso e a altura de n pessoas e retorne:
+	a) Maior peso
+	b) Menor peso
+	c) Maior altura
+	d) Menor altura
+	e) Media dos pesos
+	f) Media das alturas
+	g) Media dos IMCS
+	h) Maior IMC
+	i) Menor IMC
+
+			IMC = PESO / ALTURA²

@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+int main() {
+  float peso, altura, maior_p=0, menor_p=500, media_p, maior_a=1, menor_a=300, media_a, imc, maior_imc=0, menor_imc=100, media_imc, soma_p, soma_a, soma_imc;
+  int cont=0, op;
+
+  do{
+    system("clear");
+    cout << "******** DADOS ********\n";
+    cout << "\n[1] ADICIONAR PESSOA\n";
+    cout << "[0] SAIR\n";
+    cout << "\nDIGITE UMA OPCAO: ";
+    cin >> op;
+
+    if (op == 1){
+      cout << "\n***********************\n";
+      cout << "PESO DA PESSOA(kg) " << ++cont << ": ";
+      cin >> peso;
+      if (peso > maior_p)
+        maior_p = peso;
+      if (peso < menor_p)
+        menor_p = peso;
+      soma_p += peso;
+      cout << "ALTURA DA PESSOA(m) " << cont << ": ";
+      cin >> altura;
+      if (altura > 3)
+        altura/=100;
+      if (altura > maior_a)
+        maior_a = altura;
+      if (altura < menor_a)
+        menor_a = altura;
+      soma_a += altura;
+      imc = peso/(altura*altura);
+      if (imc > maior_imc)
+        maior_imc = imc;
+      if (imc < menor_imc)
+        menor_imc = imc;
+      soma_imc += imc;
+      }
+
+  }while(op != 0);
+  media_p = soma_p/cont;
+  media_a = soma_a/cont;
+  media_imc = soma_imc/cont;
+  system ("clear");
+  cout << "\n******* RELATORIO ******\n";
+  cout << "\nTOTAL DE PESSOAS: " << cont;
+  cout << "\nMAIOR PESO: " << maior_p;
+  cout << "\nMENOR PESO: " << menor_p;
+  cout << "\nMEDIA PESO: " << media_p;
+  cout << "\nMAIOR ALTURA: " << maior_a;
+  cout << "\nMENOR ALTURA: " << menor_a;
+  cout << "\nMEDIA ALTURA: " << media_a;
+  cout << "\nMAIOR IMC: " << maior_imc;
+  cout << "\nMENOR IMC: " << menor_imc;
+  cout << "\nMEDIA IMC: " << media_imc;
+  cout << "\n\n***********************\n";
+  
+return 0;
+}

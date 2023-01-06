@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() {
+  float nota, soma, media, op, cont=0;
+
+  do{
+    system("clear");
+    cout << "******** MEDIA ********\n";
+    cout << "\n[1] ADICIONAR NOTA\n";
+    cout << "[0] SAIR\n";
+    cout << "\nDIGITE UMA OPCAO: ";
+    cin >> op;
+
+    if (op == 1){
+      cout << "\n***********************\n";
+      cout << "NOTA DO ALUNO " << ++cont << ": ";
+      cin >> nota;
+      soma += nota;
+      }
+  }while(op != 0);
+  media = soma/cont;
+  cout << "\n***********************\n";
+  cout << "\nTOTAL DE ALUNOS: " << cont;
+  cout << "\nMEDIA DA SALA: " << media;
+  cout << "\n\n***********************\n";
+  
+return 0;
+}

@@ -1,0 +1,18 @@
+Laboratório de Programação
+Avaliação P1
+
+A avaliação P1 irá contemplar o desenvolvimento de um programa para ser desenvolvido no prazo de uma semana
+e entregue no dia 11/11/2020, além do desenvolvimento de um programa em aula no mesmo dia da entrega do trabalho. 
+Tudo deverá ser postado no Teams em na aba da tarefa específica para cada uma das atividades avaliativas.
+
+Projeto:
+Desenvolva um programa em linguagem de programação C++ que receba uma string (vetor de char) contendo uma expressão
+matemática com parênteses e colchetes e retorne, após análise, se os parênteses e colchetes estão balanceados e em 
+ordem correta. Dica: Utilize strlen() para descobrir o tamanho da string e faça a leitura caractere por caractere 
+empilhando ou desempilhando os parênteses e colchetes.
+
+Obs: Uso obrigatório da estrutura do tipo pilha.
+
+Entrega: Arquivo texto no Teams (tarefa: Atividade avaliativa P1 parte 1) até o dia 11 de novembro.
+
+Bom trabalho!

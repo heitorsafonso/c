@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+int main() {
+int num[10], par=0, soma_impar=0, maior_par, menor_impar;
+system ("clear");
+cout << "========== VALORES ==========\n";
+for (int i=0; i<10; i++){
+  cout << "\nNUMERO (" << i+1 << "): ";
+  cin >> num[i];
+}
+system ("clear");
+cout << "=================== NUMEROS ===================\n\n\t";
+for(int i=0; i<10; i++)
+  cout << num[i] << "\t";
+cout << "\n\n===============================================\n";
+
+for (int i=0; i<10; i++)
+  if (num[i]%2 == 0)
+    par++;
+cout << "\n\tQUANTIDADE DE NUMEROS PARES:\t" << par;
+
+for (int i=0; i<10; i++)
+  if (num[i]%2 == 1)
+    soma_impar += num[i];
+cout << "\n\n\tSOMA DOS NUMEROS IMPARES:\t\t" << soma_impar;
+
+maior_par = num[0];
+for (int i=0; i<10; i++)
+  if(maior_par < num[i])
+    maior_par = num[i];
+cout << "\n\n\tMAIOR NUMERO PAR:\t\t\t\t" << maior_par;
+
+menor_impar = num[0];
+for (int i=0; i<10; i++)
+  if(menor_impar > num[i])
+    menor_impar = num[i];
+cout << "\n\n\tMENOR NUMERO IMPAR:\t\t\t\t" << menor_impar;
+cout << "\n\n===============================================\n";
+return 0;
+}
